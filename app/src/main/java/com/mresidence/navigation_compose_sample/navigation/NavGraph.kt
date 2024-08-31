@@ -29,7 +29,7 @@ private fun addHomeScreen(
 ) {
     navGraphBuilder.composable(route = NavRoute.Home.path) {
         HomeScreen(navigateToDetailsScreen = { text ->
-            navController.navigate(NavRoute.DetailsScreen.withArgs(text), )
+            navController.navigate(NavRoute.DetailsScreen.withArgs(text))
         })
     }
 }
@@ -44,7 +44,12 @@ private fun addDetailsScreen(
                 type = NavType.StringType
                 nullable = true
             }
-        )) {
-        DetailsScreen()
+        )) { navBackStackEntry ->
+
+        val args = navBackStackEntry.arguments
+
+        DetailsScreen(
+            text = args?.getString(NavRoute.DetailsScreen.text) ?: "Details Screen",
+        )
     }
 }
