@@ -5,8 +5,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(text: String? = null) {
     Column {
-        Text("Details Screen")
+        Text(text = text ?: "Details Screen")
     }
 }

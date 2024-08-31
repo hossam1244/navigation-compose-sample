@@ -19,10 +19,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun HomeScreen(
-    navigateToDetailsScreen: () -> Unit
+    navigateToDetailsScreen: (String) -> Unit
 ) {
-    // create a text composable to display the details screen
-
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -37,9 +35,7 @@ fun HomeScreen(
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = {
             // navigate to the details screen
-            navigateToDetailsScreen()
-
-
+            navigateToDetailsScreen(text.value.text)
         }
         ) {
             Text("Navigate to Details")
