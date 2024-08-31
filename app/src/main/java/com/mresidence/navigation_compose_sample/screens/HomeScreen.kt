@@ -37,7 +37,7 @@ fun HomeScreen(
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = {
             // navigate to the details screen
-
+            navigateToDetailsScreen()
 
 
         }
